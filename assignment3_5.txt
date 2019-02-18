@@ -1,0 +1,31 @@
+1. Import the Titanic Dataset from the link Titanic Data Set.
+Perform the following:
+a. Is there any difference in fares by different class of tickets?
+Note - Show a boxplot displaying the distribution of fares by class
+  Ans:
+     ####downloaded titanicd ata set into c drive ####
+    
+     >setwd("C:/Users/hemakumar/Downloads")
+     >data1<-read_excel("titanic3.xls")
+
+     >boxplot(fare~ pclass, data = data1,
+              xlab = "name of class",
+              ylab = "price of ticket", 
+              main = "price of ticket based on class",
+              varwidth = TRUE, 
+              col = c("green","yellow","purple"),
+              names = c("class1","class2","class3")
+              )
+
+b. Is there any association with Passenger class and gender?
+Note – Show a stacked bar chart
+   Ans:
+    ####downloaded titanicd ata set into c drive ####
+
+      >setwd("C:/Users/hemakumar/Downloads")
+      >data1<-read_excel("titanic3.xls")
+
+      >table1<-table(data1$sex,data1$pclass)
+
+      >barplot(table1,legend.text = c('female','male'),main = "Passenger class and gender",
+        names.arg=c('class1','class2','class3'), col = c(2,4))
